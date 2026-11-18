@@ -1,0 +1,46 @@
+name: Validar e publicar site
+
+on:
+    pull_request:
+      branches:
+        - main
+    push:
+      branches:
+        - main
+    workflow_dispatch:
+
+permissions:
+      contents: read
+
+jobs: 
+  validade:
+    name: validar arquivos do site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo do repositorio
+        uses: actions/checkout@v6
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Executar ESLint
+        run: npm run lint
+
+      - name: Verificar arquivos essenciais
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f identity.css
+          test -f carousel.css
+          test -f carousel.js
+
+      - name: Verificar sintaxe do JS
+        run: node --check carousel.js
+          
