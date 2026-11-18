@@ -1,0 +1,23 @@
+/* Identidade visual TechTeam */
+:root{--ink:#020d24;--navy:#041737;--lime:#00ed73;--muted:#aec8de;--cream:#eef6ff}
+body{background:#020d24;color:#f5fbff}
+.header{background:#020c20;border-bottom-color:#123b64}
+.brand-logo{width:68px;height:68px;box-shadow:0 0 20px #007cff33}
+.nav nav{color:#c8d9e8}.nav nav a:hover,.text-link:hover{color:#00eaa3}
+.nav-cta{border-color:#058ec9;color:#eafaff}.nav-cta:hover{background:#073454}
+.hero{position:relative}.hero:before{content:"";position:absolute;z-index:-1;inset:0 -12%;background:radial-gradient(ellipse at 74% 46%,#004ea047,transparent 45%)}
+.eyebrow{color:#00ddb3}.eyebrow span{background:#00ed73;box-shadow:0 0 12px #00ed73}
+h1 em,.projects h2 em,.contact h2 em{color:#00ed73}
+.lead{color:#b6cee2}.primary{background:linear-gradient(105deg,#00c8e9,#00ef77);color:#001b2a;box-shadow:0 8px 28px #00c5be24}.primary:hover{background:linear-gradient(105deg,#52e5ff,#65ffa7)}
+.hero-note{color:#9ab8cb}.dot-grid{color:#00dcc8}
+.hero-art{background:radial-gradient(circle,#0065bf55 0,#002e6344 43%,transparent 72%)}
+.orbit{border-color:#00cffa66}.orbit-two{border-color:#00e98977}
+.art-core{width:250px;height:250px;background:#031436 url('images/logo.png') center/cover no-repeat;border:1px solid #00d9df;box-shadow:0 0 70px #007eff55;overflow:hidden}
+.art-core>span,.art-core>strong,.art-core>small{display:none}
+.art-label{background:#042042;border-color:#007aab;color:#dcf8ff}.art-label i,.art-label b{background-color:#00ec80;color:#00ec80}
+.intro{background:#eef6ff;color:#052448}.intro h2 em{color:#007ed4}.dark{color:#007caa}.intro-grid>div>p:not(.eyebrow){color:#496578}.intro-grid .section-lead{color:#103958!important}.dark-link{color:#006cac}.benefits{border-color:#c3d8e7}.benefits article+article{border-color:#c3d8e7}.benefits span{color:#007fb6}.benefits p{color:#536f80}
+.projects{background:#020d24}.section-heading>p,.project-content p{color:#b2c9dc}.project-card{background:#071d3d;border-color:#15476c}.project-meta{color:#00dfbd}.tags span{border-color:#17648a;color:#a9e7ee}.project-foot{color:#a6c1d7}.project-foot span{color:#00eaaa}
+.contact{background:linear-gradient(110deg,#052454,#002b41);border-color:#086081}.contact p:not(.eyebrow){color:#bbd3e4}
+footer{background:#010a1c;border-color:#123b64}.footer-inner p,.footer-inner>a:last-child{color:#a8c4d9}
+@media(max-width:800px){.art-core{width:210px;height:210px}}
+@media(max-width:520px){.brand-logo{width:52px;height:52px}.art-core{width:175px;height:175px}}
