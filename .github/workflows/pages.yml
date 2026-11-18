@@ -11,6 +11,8 @@ on:
 
 permissions:
       contents: read
+      pages: write
+      id-token: write
 
 jobs: 
   validade:
@@ -43,4 +45,35 @@ jobs:
 
       - name: Verificar sintaxe do JS
         run: node --check carousel.js
+  deploy:
+    name: Publicar no GitHub Pages
+    needs: validade
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url}}
+
+    steps:
+      - name: Baixar codigo do repositorio
+        uses: actions/checkout@v6
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Separar arquivos do Site
+        run: | 
+          mkdir public-site
+          cp index.html style.css identity.css carousel.css carousel.js public-site/
+          cp -r images public-site/
+
+      - name: Preparar arquivos para publicacao
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public-site 
+
+      - name: Publicar site
+        id: deployment
+        uses: actions/deploy-pages@v4
           
